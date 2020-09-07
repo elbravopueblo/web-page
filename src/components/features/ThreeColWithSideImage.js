@@ -9,7 +9,7 @@ import { SectionDescription } from "components/misc/Typography.js";
 import defaultCardImage from "images/shield-icon.svg";
 
 import { ReactComponent as SvgDecoratorBlob3 } from "images/svg-decorator-blob-3.svg";
-
+import FeatureIconImage from "feather-icons/dist/icons/check-circle.svg";
 import SupportIconImage from "images/support-icon.svg";
 import ShieldIconImage from "images/shield-icon.svg";
 import CustomizeIconImage from "images/customize-icon.svg";
@@ -24,8 +24,7 @@ const ThreeColumnContainer = styled.div`
 `;
 const Subheading = tw(SubheadingBase)`mb-4`;
 const Heading = tw(SectionHeading)`w-full`;
-const Description = tw(SectionDescription)`w-full text-center`;
-
+const Description = tw(SectionDescription)`w-full text-left`;
 const VerticalSpacer = tw.div`mt-10 w-full`
 
 const Column = styled.div`
@@ -58,7 +57,14 @@ const DecoratorBlob = styled(SvgDecoratorBlob3)`
   ${tw`pointer-events-none absolute right-0 bottom-0 w-64 opacity-25 transform translate-x-32 translate-y-48 `}
 `;
 
-export default ({ cards = null, heading = "Amazing Features", subheading = "Features", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }) => {
+export default ({ 
+  cards = null, 
+  heading = "Soberania", 
+  subheading = "Basamento Legal", 
+  description = "Poder Supremo e ilimitado, tradicionalmente atribuido a la nación, al pueblo…para establecer su constitución y adoptar las decisiones políticas fundamentales tanto en el ámbito interno como en el plano internacional.",
+  enlace = "(Diccionario panhispánico del español jurídico).",
+  url = "https://dpej.rae.es/lema/soberan%C3%ADa" 
+  }) => {
   /*
    * This componets has an array of object denoting the cards defined below. Each object in the cards array can have the key (Change it according to your need, you can also add more objects to have more cards in this feature component) or you can directly pass this using the cards prop:
    *  1) imageSrc - the image shown at the top of the card
@@ -69,15 +75,31 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
 
   const defaultCards = [
     {
-      imageSrc: ShieldIconImage,
-      title: "Secure",
-      description: "We strictly only deal with vendors that provide top notch security."
+      imageSrc: FeatureIconImage,
+      title: "",
+      description: "La soberanía reside intransferiblemente en el pueblo, quien la ejerce directamente... Art. 5 Constitucion de Venezuela"
     },
-    { imageSrc: SupportIconImage, title: "24/7 Support" },
-    { imageSrc: CustomizeIconImage, title: "Customizable" },
-    { imageSrc: ReliableIconImage, title: "Reliable" },
-    { imageSrc: FastIconImage, title: "Fast" },
-    { imageSrc: SimpleIconImage, title: "Easy" }
+    { imageSrc: FeatureIconImage, 
+      title: "",   
+      description: "Todos los ciudadanos y ciudadanas tienen el derecho de participar libremente en los asuntos públicos, directamente… Art. 62 Constitucion de Venezuela"
+    },
+    { imageSrc: FeatureIconImage, 
+      title: "",
+      description: "Toda persona, legalmente capacitada, tiene el derecho de tomar parte en el gobierno de su país, directamente… Art. 20 Declaración Americana de los Derechos y Deberes del Hombre"
+    },
+    { imageSrc: FeatureIconImage, 
+      title: "",
+      description: "Todos los ciudadanos deben gozar de los siguientes derechos y oportunidades: de participar en la dirección de los asuntos públicos, directamente… Art. 23 Convencion Americana sobre derechos Humanos - pacto de san Jose de Costa Rica."
+    },
+    { imageSrc: FeatureIconImage, 
+      title: "",
+      description: "Toda persona tiene derecho a participar en el gobierno de su país, directamente… Art. 21 Declaración Universal de Derechos Humanos"
+    },
+    { imageSrc: FeatureIconImage, 
+      title: "",
+      description: "Todos los ciudadanos gozarán, sin ninguna de la distinciones mencionadas en el artículo 2, y sin restricciones indebidas, de los siguientes derechos y oportunidades: Participar en la dirección de los asuntos públicos, directamente…  Art. 25 Pacto Internacional de derechos civiles y politicos."
+    }
+
   ];
 
   if (!cards) cards = defaultCards;
@@ -87,7 +109,8 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
       <ThreeColumnContainer>
         {subheading && <Subheading>{subheading}</Subheading>}
         <Heading>{heading}</Heading>
-        {description && <Description>{description}</Description>}
+        {description && <Description>{description} <br /> <a href={url}> {enlace}</a></Description>}        
+        
         <VerticalSpacer />
         {cards.map((card, i) => (
           <Column key={i}>
@@ -95,8 +118,7 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
               <span className="imageContainer">
                 <img src={card.imageSrc || defaultCardImage} alt="" />
               </span>
-              <span className="textContainer">
-                <span className="title">{card.title || "Fully Secure"}</span>
+              <span className="textContainer">            
                 <p className="description">
                   {card.description || "Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud."}
                 </p>

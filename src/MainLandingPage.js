@@ -13,7 +13,7 @@ import { LogoLink } from "components/headers/light.js";
 import { SectionHeading as HeadingBase } from "components/misc/Headings";
 import { SectionDescription as DescriptionBase } from "components/misc/Typography";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-
+import FeaturesAndTestimonialHero from "components/hero/TwoColumnWithFeaturesAndTestimonial.js";
 import { ReactComponent as CheckboxIcon } from "feather-icons/dist/icons/check-circle.svg";
 import { ReactComponent as HandleIcon } from "images/handle-icon.svg";
 import { ReactComponent as ArrowRightIcon} from "images/arrow-right-3-icon.svg";
@@ -118,102 +118,9 @@ export default ({
     <AnimationRevealPage disabled>
       <Container tw="bg-gray-100 -mx-8 -mt-8 pt-8 px-8">
         <Content2Xl>
-          <NavRow>
-            <LogoLink href="/">
-              <img src={logo} alt="" />
-              Treact
-            </LogoLink>
-            <DownloadLink target="_blank" href="https://gum.co/QaruQ">
-              Download Now
-            </DownloadLink>
-          </NavRow>
-          <HeroRow>
-            <TextColumn>
-              <Heading>Modern React Templates for every need.</Heading>
-              <Description>
-                Easily customizable modern React Templates which are also lightweight and simple to setup. All
-                components are modular and fully responsive for great mobile experience as well as big desktop screens. Brand Colors
-                are also fully customizable.
-              </Description>
-              <FeatureList>
-                {features.map((feature, index) => (
-                  <Feature key={index}>
-                    <FeatureIcon />
-                    <FeatureText>{feature}</FeatureText>
-                  </Feature>
-                ))}
-              </FeatureList>
-              <Actions>
-                <PrimaryButton href={primaryButtonUrl} css={buttonRoundedCss}>
-                  {primaryButtonText}
-                </PrimaryButton>
-                <SecondaryButton href={secondaryButtonUrl}>
-                  {secondaryButtonText}
-                </SecondaryButton>
-              </Actions>
-            </TextColumn>
-            <ImageColumn>
-              <ImageContainer>
-                <Image src={heroScreenshotImageSrc} />
-              </ImageContainer>
-            </ImageColumn>
-          </HeroRow>
-          <SectionContainer id="landingPageDemos">
-            <SectionHeading>Landing Pages</SectionHeading>
-            <SectionDescription>
-              We have {noOfLandingPages} premade landing pages. Click on the "View Live Demo" button to see them in
-              action. Customizing or Creating your own custom landing page is really simple by using our UI components.
-            </SectionDescription>
-            <PreviewCards>
-              {Object.entries(landingPages).map(([pageName, page], index) => (
-                <PreviewCardContainer key={index}>
-                  <PreviewCard initial="rest" animate="rest" whileHover="hover" href={page.url} target="_blank">
-                    <PreviewCardImageContainer>
-                      <PreviewCardImage
-                        transition={{ type: "tween" }}
-                        variants={previewImageAnimationVariants}
-                        imageSrc={page.imageSrc}
-                      />
-                    </PreviewCardImageContainer>
-                    <PreviewButton>View Live Demo</PreviewButton>
-                  </PreviewCard>
-                </PreviewCardContainer>
-              ))}
-            </PreviewCards>
-          </SectionContainer>
-          <SectionContainer>
-            <SectionHeading>Inner Pages</SectionHeading>
-            <SectionDescription>
-              We also provide {noOfInnerPages} additional inner pages for your various needs like a signup, login,
-              pricing, about us, contact, blog etc. To view them in action click the "View Live Demo" button.
-            </SectionDescription>
-            <PreviewCards>
-              {Object.entries(innerPages).map(([pageName, page], index) => (
-                <PreviewCardContainer key={index}>
-                  <PreviewCard initial="rest" animate="rest" whileHover="hover" href={page.url} target="_blank">
-                    <PreviewCardImageContainer>
-                      <PreviewCardImage
-                        transition={{ type: "tween" }}
-                        variants={!page.scrollAnimationDisabled && previewImageAnimationVariants}
-                        imageSrc={page.imageSrc}
-                      />
-                    </PreviewCardImageContainer>
-                    <PreviewButton>View Live Demo</PreviewButton>
-                  </PreviewCard>
-                </PreviewCardContainer>
-              ))}
-            </PreviewCards>
-          </SectionContainer>
+        <FeaturesAndTestimonialHero />
 
-          <SectionContainer id="componentDemos">
-            <SectionHeading>Component Blocks</SectionHeading>
-            <SectionDescription>
-              We also provide {noOfComponentBlocks} components along with the premade landing pages so you can create your own landing page
-              within minutes as you see fit. You can combine these components to create 1000s of unique attractive web
-              pages.
-            </SectionDescription>
-            <BlocksRenderer blocks={Object.values(blocks)} />
-          </SectionContainer>
+
         </Content2Xl>
       </Container>
     </AnimationRevealPage>

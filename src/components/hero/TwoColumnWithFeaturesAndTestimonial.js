@@ -10,6 +10,8 @@ import { Container, ContentWithVerticalPadding } from "components/misc/Layouts.j
 import { ReactComponent as CheckboxIcon } from "feather-icons/dist/icons/check-circle.svg";
 import { ReactComponent as QuotesLeftIconBase } from "images/quotes-l.svg"
 import { ReactComponent as SvgDecoratorBlob1 } from "images/dot-pattern.svg"
+import clientImageSrc from "images/client/image.jpeg";
+import ThreeColWithSideImageFeatures from "components/features/ThreeColWithSideImage.js";
 
 const Header = tw(HeaderBase)`max-w-none`;
 const Row = tw.div`flex flex-col lg:flex-row justify-between items-center lg:pt-16 max-w-screen-2xl mx-auto sm:px-8`;
@@ -37,35 +39,30 @@ const CustomerCompany = tw.p`mt-1 text-sm text-gray-500`
 
 
 export default ({
-  heading = "Better, Faster and Cheaper Cloud.",
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  imageSrc = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+  heading = "Vamos a ejercer la Soberania Directa",
+  description = "¡Vamos a ejercer DIRECTAMENTE nuestra soberanía, la Constitución lo permite! La soberanía directa se trata de decidir “directamente y sin mediaciones”. Entonces,  ¿qué queremos hacer? En materia de decisiones de Estado, queremos ejercer nuestra soberanía directa sin necesidad de pedirle permiso a los órganos que en este momento ejercen el Poder Público y que sean de carácter vinculante, donde los funcionarios públicos deberán obedecerlas sin objeciones. Si no obedecen las mismas, estarían incurriendo en una falta que acarrea responsabilidad penal, civil y administrativa, según los casos, sin que les sirvan de excusas órdenes superiores. ¿Cómo podemos ejercer la soberanía directa?  Todo lo que no esté explícitamente prohibido por la Constitución o las leyes se puede hacer  y,  además,  exhortar a los órganos del Poder Público Nacional  a  ejecutar  lo  decidido.",
+  description1 = "",
+  imageSrc = clientImageSrc,
   imageDecoratorBlob = true,
   primaryButtonUrl = "https://google.com",
-  primaryButtonText = "Get Started",
+  primaryButtonText = "Vamos a Participar",
   buttonRounded = true,
-  features = ["Available in 7 Locations", "Premium Internet Backbone", "99.99% Uptime SLA"],
+  features = ["Pacto Internacional de derechos civiles y políticos", "Convencion Americana sobre derechos Humanos", "Constitución de Venezuela"],
   testimonial = {
-    quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    customerName: "Charlotte Hale",
-    customerCompany: "Delos Inc."
+    quote: "Estamos cumpliendo con el deber constitucional de facilitar la generacion de las condiciones mas favorables para que los ciudadanos participen directamente y libremente segun el articulo 62 de nuestra carta magna.",
+    customerName: "Henry Fuchs",
+    customerCompany: "Editor"
   }
 }) => {
   const buttonRoundedCss = buttonRounded && tw`rounded-full`;
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="/#">About</NavLink>
-      <NavLink href="/#">Blog</NavLink>
-      <NavLink href="/#">Pricing</NavLink>
-      <NavLink href="/#">Contact Us</NavLink>
-      <NavLink href="/#">Testimonials</NavLink>
+
     </NavLinks>,
     <NavLinks key={2}>
-      <NavLink href="/#" tw="lg:ml-12!">
-        Login
-      </NavLink>
+
       <PrimaryLink css={buttonRoundedCss} href="/#">
-        Sign Up
+        Vamos a Participar
       </PrimaryLink>
     </NavLinks>
   ];
@@ -78,6 +75,7 @@ export default ({
             <TextColumn>
               <Heading>{heading}</Heading>
               <Description>{description}</Description>
+              <Description>{description1}</Description>
               <PrimaryButton as="a" href={primaryButtonUrl} css={buttonRoundedCss}>
                 {primaryButtonText}
               </PrimaryButton>
@@ -106,6 +104,7 @@ export default ({
           </Row>
         </ContentWithVerticalPadding>
       </Container>
+      <ThreeColWithSideImageFeatures />
     </>
   );
 };

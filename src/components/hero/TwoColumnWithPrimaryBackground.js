@@ -40,7 +40,7 @@ export default ({
   const logoLink = (
     <LogoLink href="/">
       <img src={logoImageSrc} alt="Logo" />
-      Treact
+      Elbravopueblo 
     </LogoLink>
   );
   const navLinks = [
