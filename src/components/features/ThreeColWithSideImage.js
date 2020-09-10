@@ -89,7 +89,7 @@ export default ({
     },
     { imageSrc: FeatureIconImage, 
       title: "",
-      description: "Todos los ciudadanos deben gozar de los siguientes derechos y oportunidades: de participar en la dirección de los asuntos públicos, directamente… Art. 23 Convencion Americana sobre derechos Humanos - pacto de san Jose de Costa Rica."
+      description: "Todos los ciudadanos deben gozar de los siguientes derechos y oportunidades: de participar en la dirección de los asuntos públicos, directamente… Art. 23 Convencion Americana sobre derechos Humanos - Pacto de San José de Costa."
     },
     { imageSrc: FeatureIconImage, 
       title: "",
